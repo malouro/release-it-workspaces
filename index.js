@@ -190,7 +190,7 @@ export default class WorkspacesPlugin extends Plugin {
     }
 
     if (!isAuthenticated) {
-      throw new Error('Not authenticated with npm. Please `npm login` and try again.');
+      throw new Error('Not authenticated with npm. Please `yarn npm login` and try again.');
     }
   }
 
@@ -275,7 +275,7 @@ export default class WorkspacesPlugin extends Plugin {
       }
     };
 
-    return this.spinner.show({ task, label: 'npm version' });
+    return this.spinner.show({ task, label: 'yarn version' });
   }
 
   async release() {
@@ -381,16 +381,17 @@ export default class WorkspacesPlugin extends Plugin {
   }
 
   async isAuthenticated() {
-    const registry = this.getRegistry();
+    // const registry = this.getRegistry();
+    // Notice: --registry flag not supported in yarn, must be configured in .yarnrc.yml
 
     try {
-      await this.exec(`npm whoami --registry ${registry}`);
+      await this.exec('yarn npm whoami');
       return true;
     } catch (error) {
       this.debug(error);
 
       if (/code E40[04]/.test(error)) {
-        this.log.warn('Ignoring unsupported `npm whoami` command response.');
+        this.log.warn('Ignoring unsupported `yarn npm whoami` command response.');
         return true;
       }
 
@@ -429,12 +430,10 @@ export default class WorkspacesPlugin extends Plugin {
     }
 
     try {
-      await this.exec(
-        `(cd ./${workspaceInfo.relativeRoot} && yarn npm publish --tag ${tag}${accessArg}${otpArg}${dryRunArg})`,
-        {
-          options,
-        }
-      );
+      await this.exec(`yarn npm publish --tag ${tag}${accessArg}${otpArg}${dryRunArg}`, {
+        ...options,
+        cwd: `./${workspaceInfo.relativeRoot}`,
+      });
 
       workspaceInfo.isReleased = true;
     } catch (err) {
