@@ -1,5 +1,5 @@
 {
-  "name": "@release-it-plugins/workspaces",
+  "name": "release-it-yarn-workspaces",
   "version": "3.2.0",
   "description": "release-it plugin for bumping and publishing workspaces",
   "keywords": [
@@ -8,23 +8,21 @@
     "release-it-plugin",
     "plugin"
   ],
-  "repository": "https://github.com/release-it-plugins/workspaces",
+  "repository": "https://github.com/carlitoplatanito/release-it-workspaces",
   "license": "MIT",
-  "author": "Robert Jackson <me@rwjblue.com>",
+  "author": "Carlito Platanito <carlitoplatanito@gmail.com>",
+  "contributors": [
+    "Robert Jackson <me@rwjblue.com>"
+  ],
   "type": "module",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "scripts": {
-    "lint:js": "eslint .",
-    "test": "npm-run-all lint:js test:jest",
-    "test:jest": "NODE_OPTIONS=--experimental-vm-modules npx jest"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "prepare": "yarn husky install",
+    "lint": "eslint .",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "lint-staged": {
     "*.js": "eslint"
@@ -45,7 +43,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^4.2.3",
+    "husky": "^8.0.1",
     "jest": "^28.1.2",
     "jest-environment-node": "^28.1.2",
     "lint-staged": "^10.1.1",
@@ -58,14 +56,14 @@
     "tmp": "^0.1.0"
   },
   "peerDependencies": {
-    "release-it": "^14.0.0 || ^15.2.0"
+    "release-it": "^15.2.0"
   },
   "engines": {
-    "node": ">= 14"
+    "node": ">= 16"
   },
   "volta": {
-    "node": "14.20.0",
-    "npm": "8.14.0"
+    "node": "16.18.0",
+    "npm": "8.19.2"
   },
   "publishConfig": {
     "access": "public",
@@ -85,5 +83,6 @@
       "release": true,
       "tokenRef": "GITHUB_AUTH"
     }
-  }
+  },
+  "packageManager": "yarn@3.2.4"
 }
