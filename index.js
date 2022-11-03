@@ -430,7 +430,7 @@ export default class WorkspacesPlugin extends Plugin {
 
     try {
       await this.exec(
-        `yarn npm publish ./${workspaceInfo.relativeRoot} --tag ${tag}${accessArg}${otpArg}${dryRunArg}`,
+        `(cd ./${workspaceInfo.relativeRoot} && yarn npm publish --tag ${tag}${accessArg}${otpArg}${dryRunArg})`,
         {
           options,
         }
