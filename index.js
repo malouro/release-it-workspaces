@@ -429,11 +429,15 @@ export default class WorkspacesPlugin extends Plugin {
       return;
     }
 
+    console.log(`Attempting to publish the following package: ${workspaceInfo.name}`);
+
     try {
       await this.exec(`yarn npm publish --tag ${tag}${accessArg}${otpArg}${dryRunArg}`, {
         ...options,
         cwd: `./${workspaceInfo.relativeRoot}`,
       });
+
+      console.log(`Published ${workspaceInfo.name}`);
 
       workspaceInfo.isReleased = true;
     } catch (err) {
@@ -473,6 +477,8 @@ export default class WorkspacesPlugin extends Plugin {
 
   async eachWorkspace(action) {
     let workspaces = this.getWorkspaces();
+
+    console.info(workspaces);
 
     for (let workspaceInfo of workspaces) {
       try {
