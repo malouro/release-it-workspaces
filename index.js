@@ -478,8 +478,6 @@ export default class WorkspacesPlugin extends Plugin {
   async eachWorkspace(action) {
     let workspaces = this.getWorkspaces();
 
-    console.info(workspaces);
-
     for (let workspaceInfo of workspaces) {
       try {
         this.setContext({
