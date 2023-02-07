@@ -222,19 +222,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/bar --tag latest",
+            "command": "cd ./packages/bar && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag latest",
+            "command": "cd ./packages/foo && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -414,26 +414,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/@scope-name/bar --tag latest",
+            "command": "cd ./packages/@scope-name/bar && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/@scope-name/bar --tag latest --access public",
-            "operationType": "command",
-            "options": Object {
-              "write": false,
-            },
-          },
-          Object {
-            "command": "npm publish ./packages/@scope-name/foo --tag latest",
+            "command": "cd ./packages/@scope-name/foo && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -492,19 +485,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./dist/packages/qux --tag latest",
+            "command": "cd ./dist/packages/qux && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./dist/packages/zorp --tag latest",
+            "command": "cd ./dist/packages/zorp && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -539,19 +532,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/bar --tag foo",
+            "command": "cd ./packages/bar && yarn npm publish --tag foo",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag foo",
+            "command": "cd ./packages/foo && yarn npm publish --tag foo",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -581,14 +574,14 @@ describe('@release-it-plugins/workspaces', () => {
       expect(plugin.operations).toMatchInlineSnapshot(`
         Array [
           Object {
-            "command": "npm publish ./packages/bar --tag latest",
+            "command": "cd ./packages/bar && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag latest",
+            "command": "cd ./packages/foo && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -624,19 +617,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry http://my-custom-registry",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/bar --tag latest",
+            "command": "cd ./packages/bar && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag latest",
+            "command": "cd ./packages/foo && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -674,19 +667,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry http://my-custom-registry",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/bar --tag latest",
+            "command": "cd ./packages/bar && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag latest",
+            "command": "cd ./packages/foo && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -723,19 +716,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/bar --tag beta",
+            "command": "cd ./packages/bar && yarn npm publish --tag beta",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag beta",
+            "command": "cd ./packages/foo && yarn npm publish --tag beta",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -783,19 +776,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./packages/bar --tag latest",
+            "command": "cd ./packages/bar && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./packages/foo --tag latest",
+            "command": "cd ./packages/foo && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
@@ -890,19 +883,19 @@ describe('@release-it-plugins/workspaces', () => {
             "options": undefined,
           },
           Object {
-            "command": "npm whoami --registry https://registry.npmjs.org",
+            "command": "yarn npm whoami",
             "operationType": "command",
             "options": undefined,
           },
           Object {
-            "command": "npm publish ./dist/@glimmer/interfaces --tag latest",
+            "command": "cd ./dist/@glimmer/interfaces && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
             },
           },
           Object {
-            "command": "npm publish ./dist/@glimmer/runtime --tag latest",
+            "command": "cd ./dist/@glimmer/runtime && yarn npm publish --tag latest",
             "operationType": "command",
             "options": Object {
               "write": false,
