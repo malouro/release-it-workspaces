@@ -432,12 +432,12 @@ export default class WorkspacesPlugin extends Plugin {
     console.log(`Attempting to publish the following package: ${workspaceInfo.name}`);
 
     try {
-      await this.exec(`yarn npm publish --tag ${tag}${accessArg}${otpArg}${dryRunArg}`, {
-        ...options,
-        cwd: `./${workspaceInfo.relativeRoot}`,
-      });
-
-      console.log(`Published ${workspaceInfo.name}`);
+      await this.exec(
+        `npm publish ./${workspaceInfo.relativeRoot} --tag ${tag}${accessArg}${otpArg}${dryRunArg}`,
+        {
+          options,
+        }
+      );
 
       workspaceInfo.isReleased = true;
     } catch (err) {
