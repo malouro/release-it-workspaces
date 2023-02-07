@@ -429,8 +429,6 @@ export default class WorkspacesPlugin extends Plugin {
       return;
     }
 
-    console.log(`Attempting to publish the following package: ${workspaceInfo.name}`);
-
     try {
       await this.exec(
         `cd ./${workspaceInfo.relativeRoot} && yarn npm publish --tag ${tag}${accessArg}${otpArg}${dryRunArg}`,
